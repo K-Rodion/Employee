@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EmployeeiConText": {
+      "commandName": "Project",
+      "commandLineArgs": "\"{\"\\\"Id\"\\\":0,\"\\\"FirstName\"\\\":\"\\\"John\"\\\",\"\\\"LastName\"\\\":\"\\\"Locke\"\\\",\"\\\"SalaryPerHour\"\\\":50.0}\"\r\n\"{\"\\\"Id\"\\\":1,\"\\\"FirstName\"\\\":\"\\\"Baruch\"\\\",\"\\\"LastName\"\\\":\"\\\"Spinoza\"\\\",\"\\\"SalaryPerHour\"\\\":40.0}\"\r\n\"{\"\\\"Id\"\\\":2,\"\\\"FirstName\"\\\":\"\\\"Rene\"\\\",\"\\\"LastName\"\\\":\"\\\"Descartes\"\\\",\"\\\"SalaryPerHour\"\\\":60.0}\""
+    }
+  }
+}
