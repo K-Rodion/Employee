@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using EmployeeiConText.Interfaces;
@@ -13,9 +14,29 @@ namespace EmployeeiConText
         private readonly string filePath;
         private List<Employee> employees = new List<Employee>();
 
-        public JsonFileEmployeeRepository(string filePath)
+        public JsonFileEmployeeRepository(string filePath, string[] args = null)
         {
             this.filePath = filePath;
+
+            if (args != null)
+            {
+                GetEmployee(args);
+            }
+        }
+
+        private void GetEmployee(string[] args)
+        {
+            foreach (var str in args)
+            {
+                if (!string.IsNullOrEmpty(str))
+                {
+                    Employee? employee = JsonConvert.DeserializeObject<Employee>(str);
+                    if (employee != null)
+                    {
+                        employees.Add(employee);
+                    }
+                }
+            }
         }
 
         public async Task LoadAsync()

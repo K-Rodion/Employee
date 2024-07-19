@@ -11,9 +11,17 @@ namespace EmployeeiConText
 
         public static async Task Main(string[] args)
         {
-            employeeRepository = new JsonFileEmployeeRepository("employees.json");
-            await employeeRepository.LoadAsync();
-
+            if (args.Length > 0)
+            {
+                employeeRepository = new JsonFileEmployeeRepository("employees.json", args);
+            }
+            else
+            {
+                employeeRepository = new JsonFileEmployeeRepository("employees.json");
+                await employeeRepository.LoadAsync();
+            }
+            
+            
             InitializeCommands();
 
             while (true)
